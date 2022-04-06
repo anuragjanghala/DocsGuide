@@ -1,0 +1,11 @@
+PostgreSQL with django on windows:
+
+- install it on machine after download the installer from main website
+- configure Postgres on machine
+- create a user for database
+- before adding postgresql we need to backup sqlite data in datadump.json file
+- python manage.py dumpdata > datadump.json
+- add db settings in django settings
+- install postgres adapter for django psycopg: pip install psycopg2
+- to sync our model to database we need to use command: python manage.py migrate --run-syncdb
+- now to get data back we need to use: python manage.py loaddata datadump.json (make sure file format is utf-8 for datadump.json)
